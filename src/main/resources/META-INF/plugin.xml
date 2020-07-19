@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>org.example.add-mocks-plugin</id>
+    <name>Add Mocks</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <idea-version since-build="191.*" until-build="193.*"/>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action
+                id="GetMethod.ToolsMenu"
+                class="nl.deyoungcs.intellij.plugins.AddMocksAction"
+                text="Add Mocks"
+                description="Add Mocks">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
