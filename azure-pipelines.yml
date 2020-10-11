@@ -6,6 +6,7 @@
 parameters:
   - name: changeNumber
     type: string
+    default: null
 
 trigger:
 - master
@@ -19,5 +20,5 @@ steps:
 
 - script: |
     echo Add other tasks to build, test, and deploy $(Username)
-    echo See https://aka.ms/yaml ${{changeNumber}}
+    echo See https://aka.ms/yaml ${{parameters.changeNumber}}
   displayName: 'Run a multi-line script'
