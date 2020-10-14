@@ -20,13 +20,20 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+    - script: echo build
+    displayName: 'Running build'
   - job: 'push'
     steps:
-    - script: echo Add other tasks to build, test, and deploy $(Username)
+    - script: echo push
 
 - stage: deploy
   jobs:
-    - job : 'deploy'
-  
+  - deployment: 
+    pool:
+      vmImage: 'ubuntu-latest'
+    environment: test
+    strategy:
+     runOnce:
+       deploy:
+         steps:
+           - script: echo deploy
