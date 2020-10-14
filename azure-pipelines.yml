@@ -11,14 +11,22 @@ parameters:
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  
+stages:
+- stage: build
+  jobs:
+  - job: 'BuildAndPush'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: echo Hello, world!
+    displayName: 'Run a one-line script'
+  - job: 'push'
+    steps:
+    - script: echo Add other tasks to build, test, and deploy $(Username)
 
-- script: |
-    echo Add other tasks to build, test, and deploy $(Username)
-    echo See https://aka.ms/yaml ${{parameters.changeNumber}}
-  displayName: 'Run a multi-line script'
+- stage: deploy
+  jobs:
+    - job : 'deploy'
+  
