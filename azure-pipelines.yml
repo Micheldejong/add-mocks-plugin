@@ -31,7 +31,7 @@ stages:
   - deployment: 
     pool:
       vmImage: 'ubuntu-latest'
-    environment: test
+    environment: Test
     strategy:
      runOnce:
        deploy:
