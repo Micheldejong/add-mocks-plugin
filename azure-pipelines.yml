@@ -27,7 +27,7 @@ stages:
     - script: echo push
 
 - stage: deploy
-  condition: ne('${{parameters.changeNumber}}, 'null')
+  condition: ne('${{parameters.changeNumber}}',' 'null')
   jobs:
   - deployment: 
     pool:
