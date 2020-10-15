@@ -24,7 +24,7 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - script: echo build
-    - script: echo '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)  versions:set -DnewVersion=$(Build.BuildNumber) -Dmaven.test.skip=' ${{parameters.skipTests}}    
+    - script: echo '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)  versions:set -DnewVersion=$(Build.BuildNumber) -Dmaven.test.skip='${{parameters.skipTests}}    
     displayName: 'Running build'
   - job: 'push'
     steps:
