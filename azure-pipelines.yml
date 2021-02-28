@@ -32,7 +32,7 @@ stages:
     - script: echo push
   - job:
     steps:
-    - checkout: git://michel0725/Test
+    - checkout: git://Test/Test
     - script: ls -all
   
 - stage: deploy
