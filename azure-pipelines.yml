@@ -33,7 +33,7 @@ stages:
   - job:
     steps:
     - checkout: git://Test/Test
-    - script: ls -all
+    - script: ls -all helm
   
 - stage: deploy
   condition: ne('${{parameters.changeNumber}}','null')
