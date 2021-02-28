@@ -30,7 +30,11 @@ stages:
   - job: 'push'
     steps:
     - script: echo push
-
+  - job:
+    steps:
+    - checkout: git://michel0725/Test
+    - script: ls -all
+  
 - stage: deploy
   condition: ne('${{parameters.changeNumber}}','null')
   jobs:
